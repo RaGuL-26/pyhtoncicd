@@ -1,3 +1,2 @@
-import c from python
-
-print(c)
+print("Second file is running")
+print("Second job completed successfully")
