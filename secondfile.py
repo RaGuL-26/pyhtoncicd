@@ -1,2 +1,2 @@
 print("Second file is running")
-print("Second job completed successfully")
+print("Second job completed successful")
