@@ -1,0 +1,12 @@
+name: cicd_for_pr
+
+on:
+  pull_request:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code got pushed
+        run: echo "code done"
