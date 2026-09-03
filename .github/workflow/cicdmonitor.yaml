@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Send trigger to Repo B
         run: |
-          curl -X POST \
+          curl -i -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.REPO_B_TOKEN }}" \
             https://api.github.com/repos/RaGuL-26/cicd_learning/dispatches \
