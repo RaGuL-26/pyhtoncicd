@@ -1,30 +1,16 @@
-# name: forgotcicd
+name : cicd_envtesting
 
-# on:
-#   workflow_dispatch:
+on:
+    workflow_dispatch:
 
-# jobs:
-#   job1:
-#     runs-on: ubuntu-latest
+env:
+    app_name: myapp
+    my_name : ragul
 
-#     steps:
-#       - uses: actions/checkout@v4
-#         with:
-#           repository: RaGuL-26/cicd_learning
-#           path: javapath
+jobs:
+    job1:
+        runs-on: ubuntu-latest
 
-#       - run: |
-#           javac javapath/javas/hello.java
-#           java -cp javapath/javas hello
-
-#   job2:
-#     needs: job1
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - uses: actions/checkout@v4
-#         with:
-#           repository: RaGuL-26/pyhtoncicd
-#           path: pythoncicdpath
-
-#       - run: python pythoncicdpath/pyss.py
+        steps:
+            - run : |
+                echo : "app name = $app_name"
