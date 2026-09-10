@@ -1,14 +1,17 @@
-name: cicd_for_pr
+name : python_push
 
 on:
-  pull_request:
-    types:
-        - synchronize
+  push:
+    branches:
+      - main
+    paths:
+      - "*.py"
+
+  workflow_dispatch:
 
 jobs:
   job1:
-    runs-on: ubuntu-latest
-
+    runs-on : ubuntu-latest
     steps:
-      - name: Code got pushed
-        run: echo "code done"
+      - uses : actions/checkout@v4
+      - run : python app.py
