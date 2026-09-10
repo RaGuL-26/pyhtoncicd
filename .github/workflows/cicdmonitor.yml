@@ -2,7 +2,8 @@ name: schedule_cron
 
 on:
   schedule:
-    - cron: "17 8 * * *"
+    - cron: "22 14 * * *"
+      timezone: "Asia/Kolkata"
 
 jobs:
   job1:
