@@ -1,32 +1,30 @@
-name : forgotcicd
+name: forgotcicd
 
 on:
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
-    job1:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v4
-              with: 
-                repository: RaGuL-26/cicd_learning
-                path : javapath
-       
-            - run: |
-                javac javapath/javas/hello.java
-                javapath/javas/java hello
+  job1:
+    runs-on: ubuntu-latest
 
-    job2:
-        needs : job1
-        runs-on: ubuntu-latest
-        steps:
-            
-            - uses : actions/checkout@v4
-              with:
-                repository : RaGuL-26/pyhtoncicd
-                path : pythoncicdpath
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: RaGuL-26/cicd_learning
+          path: javapath
 
-            - run : python pythoncicdpath/pyss.py
+      - run: |
+          javac javapath/javas/hello.java
+          java -cp javapath/javas hello
 
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
 
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: RaGuL-26/pyhtoncicd
+          path: pythoncicdpath
 
+      - run: python pythoncicdpath/pyss.py
