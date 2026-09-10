@@ -13,6 +13,17 @@ jobs:
 
         steps:
             - run : |
-                echo : "app name = $app_name"
-                echo : "using : $my_name"
-                echo : "${{secrets.PASS_WORD}}"
+                echo  "app name = $app_name"
+                echo  "using : $my_name"
+                echo  "${{secrets.PASS_WORD}}"
+
+    job2:
+        runs-on: ubuntu-latest
+        env:
+            app_name: myapp123
+
+        steps:
+            - run : |
+                echo  "app name = $app_name"
+                echo  "using : $my_name"
+                echo  "${{secrets.PASS_WORD}}"
