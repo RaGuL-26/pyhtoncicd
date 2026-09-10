@@ -1,14 +1,13 @@
-name : schedule_cron
+name: schedule_cron
 
 on:
-    schedule:
-        - cron : "12 14 * * *"
-jobs:
-    job1:
-        runs-on : ubuntu-latest
+  schedule:
+    - cron: "17 8 * * *"
 
-        steps:
-            - uses : actions/checkout@v4
-            - run : python app.py
-        
-        
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: python app.py
