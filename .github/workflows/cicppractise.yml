@@ -1,13 +1,30 @@
-name : cicdpractse
+name : forgotcicd
 
 on:
-    workflow_dispatch
+    workflow_dispatch:
 
 jobs:
-    Job1:
-        runs-on : ubuntu-latest
+    job1:
+        runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - run: echo "hi"
+              with: 
+                repository: RaGuL-26/cicd_learning
+                path : javapath
+       
+            - run: |
+                javac javapath/javas/hello.java
+                javapath/javas/java hello
+
+    job2:
+        runs-on: ubuntu-latest
+        steps:
+            - uses : actions/checkout@v4
+              with:
+                repository : RaGuL-26/pyhtoncicd
+                path : pythoncicdpath
+
+            - run : python pythoncicdpath/pyss.py
+
 
 
