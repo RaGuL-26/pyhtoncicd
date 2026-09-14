@@ -27,11 +27,11 @@ jobs:
     steps:
       - uses : actions/checkout@v4
         with:
-          repository : RaGuL-26/cicd_learning
+          repository : RaGuL-26/cicd_learning/javas
           path : javafile
       - run : |
-          javac javafile/javas/hello.java
-          java javafile/javas/hello
+          javac hello.java
+          java hello
 
 
   job3:
