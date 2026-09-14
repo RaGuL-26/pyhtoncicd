@@ -29,9 +29,9 @@ jobs:
         with:
           repository : RaGuL-26/cicd-project-helping
           path : fastapi
-      - run : |
-          pip install -r fastapi/requirements.txt
-          python -m uvicorn app.main:app
+      - run : pip install -r fastapi/requirements.txt
+      - run : python -m uvicorn app.main:app
+        working-directory: fastAPI
 
   job3:
     name: final_status
