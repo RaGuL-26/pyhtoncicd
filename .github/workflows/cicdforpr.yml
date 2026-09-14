@@ -30,8 +30,8 @@ jobs:
           repository : RaGuL-26/cicd_learning
           path : javafile
       - run : |
-          javac javas/hello.java
-          java hello
+          javac javafile/javas/hello.java
+          java javafile/javas/hello
 
 
   job3:
