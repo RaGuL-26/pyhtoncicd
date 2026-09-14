@@ -7,10 +7,10 @@ env:
   APP_NAME : FastAPI practise
 jobs:
   job1:
+    runs-on : ubuntu_latest
     env:
       APP_NAME : FastAPI practise
     name : check_app
-    runs-on : ubuntu_latest
     steps:
       - uses : actions/checkout@v4
         with:
