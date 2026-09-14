@@ -31,7 +31,7 @@ jobs:
           path : javafile
       - run : |
           javac javafile/javas/hello.java
-          javas/java hello
+          java -cp javafile/javas hello
          
 
 
