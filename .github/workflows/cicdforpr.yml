@@ -31,7 +31,7 @@ jobs:
           path : fastapi
       - run : pip install -r fastapi/requirements.txt
       - run : python -m uvicorn app.main:app
-        working-directory: fastAPI
+        working-directory: fastapi
 
   job3:
     name: final_status
