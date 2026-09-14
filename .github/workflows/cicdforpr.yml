@@ -18,8 +18,6 @@ jobs:
           path : fastapi
       - run : echo ${{ env.APP_NAME }}
       - run : echo $APP_NAME
-      - run : echo %APP_NAME%
-        shell : cmd
       - run : pip install -r fastapi/requirements.txt
   
   job2:
