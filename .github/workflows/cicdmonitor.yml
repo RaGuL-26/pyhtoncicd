@@ -1,4 +1,4 @@
-name : job_success_fails
+name: failure_test
 
 on:
   workflow_dispatch:
@@ -8,12 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run : echo "abcd"
+      - name: Step 1
+        run: echo "This works"
 
-      - run : exit 1
+      - name: Step 2 - intentionally fail
+        run: exit 1
 
-      - if : ${{success()}}
-        run : echo " hi"
+      - name: Success step
+        if: ${{ success() }}
+        run: echo "Everything succeeded"
 
-      - if : ${{ failure()}}
-        run : echo "no"
+      - name: Failure step
+        if: ${{ failure() }}
+        run: echo "Something failed!"
