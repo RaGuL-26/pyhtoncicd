@@ -1,9 +1,6 @@
-name: schedule_cron
+name : job_success_fails
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"
-
   workflow_dispatch:
 
 jobs:
@@ -11,5 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - run: python app.py
+      - run : echo "abcd"
+
+      - if : ${{success()}}
+        run : echo " hi"
+
+      - if : ${{ failure()}}
+        run : echo "no"
